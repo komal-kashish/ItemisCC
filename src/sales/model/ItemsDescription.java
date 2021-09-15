@@ -1,4 +1,4 @@
-package java.model;
+package sales.model;
 
 public enum ItemsDescription {
 
@@ -31,4 +31,5 @@ public enum ItemsDescription {
     public boolean isExempted(){
         return isExempted;
     }
+
 }
