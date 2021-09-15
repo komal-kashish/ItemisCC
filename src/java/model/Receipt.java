@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class Receipt {
 
+    private double total;
+    private double taxTotal;
     private ArrayList<Item> ItemsList = new ArrayList<>();
 
     //Reads an input txt file and parsed to extract product details
@@ -114,6 +116,12 @@ public class Receipt {
         }
 
         filereader.close(); //closing the scanner
+    }
+
+    public double[] TotalCost(){
+
+
+        return new double[]{taxTotal, total};
     }
 
     private static int ItemfromArray(String line, String[] items) {
