@@ -1,4 +1,4 @@
-package java.model;
+package sales.model;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -7,8 +7,9 @@ import java.util.Scanner;
 
 public class Receipt {
 
-    private double total;
-    private double taxTotal;
+    private Double taxTotal = 0.00;
+    private Double saleTotal = 0.00;
+    private Double itemTotal = 0.00;
     private ArrayList<Item> ItemsList = new ArrayList<>();
 
     //Reads an input txt file and parsed to extract product details
@@ -120,9 +121,45 @@ public class Receipt {
 
     public double[] TotalCost(){
 
+        for(Item item: ItemsList){
+            this.itemTotal = this.itemTotal + (item.getCost() * item.getQty());
+            this.taxTotal = this.taxTotal + computeSalesTax(item);
+        }
+        this.saleTotal = this.itemTotal + this.taxTotal;
 
-        return new double[]{taxTotal, total};
+        return new double[]{taxTotal, saleTotal};
     }
+
+    private Double computeSalesTax(Item item) {
+        Double tax = .10;
+        if (item.isItemExempted()){
+            tax = .00;
+        }
+
+        if (item.isItemImported()){
+            tax = tax + .05;
+        }
+        Double rounded = roundAmount((item.getCost()*tax) * item.getQty());
+        item.setAfterTax(rounded + (item.getCost() * item.getQty()));
+        return rounded;
+    }
+
+    public Double getTaxTotal() {
+        return this.taxTotal;
+    }
+
+    public Double getSaleTotal() {
+        return this.saleTotal;
+    }
+
+    private Double roundAmount(Double amount){
+        return Math.ceil((amount * 20.0)) / 20.0;
+    }
+
+    private Double computeSaleTotal(){
+        return this.saleTotal = (this.taxTotal + this.itemTotal);
+    }
+
 
     private static int ItemfromArray(String line, String[] items) {
 
@@ -136,4 +173,18 @@ public class Receipt {
         }
         return -1;
     }
+
+    public void printReceipt(){
+        /*
+         * Printing the com.SalesTax.java.Receipt
+         */
+
+        int countItems = ItemsList.size();
+        for (Item item : ItemsList) {
+            System.out.println("1" + item.getName() + "at " + item.getCost());
+        }
+        System.out.printf("Sales Tax: %.2f\n", taxTotal);
+        System.out.printf("Total: %.2f\n", saleTotal);
+    }
+
 }
