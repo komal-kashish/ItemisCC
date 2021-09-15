@@ -12,7 +12,7 @@ public enum ItemsDescription {
     IMPORTED_FOOD(true,true),
 
     //remaining products put in the category
-    OTHERS (false ,false),
+    OTHERS (false,false),
     IMPORTED_OTHERS(false,true);
 
 
