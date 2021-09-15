@@ -11,7 +11,7 @@ public enum ItemsDescription {
     IMPORTED_MEDICAL(true,true),
     IMPORTED_FOOD(true,true),
 
-    //remaining products put in the category
+    //remaining products put in the non exempted category
     OTHERS (false,false),
     IMPORTED_OTHERS(false,true);
 
