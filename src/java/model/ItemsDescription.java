@@ -4,11 +4,31 @@ public enum ItemsDescription {
 
     //List of Items with Description: ItemName(Exempted: true/false, Imported: true/false)
 
-    private boolean isExempted;
-    private boolean isImported;
+    BOOK(true,false),
+    MEDICAL(true,false),   //including pills, bandaids etc.
+    FOOD(true,false),       //chocolate, chips etc.
+    IMPORTED_BOOK(true,true),
+    IMPORTED_MEDICAL(true,true),
+    IMPORTED_FOOD(true,true),
 
-    private ItemsDescription(boolean exempted , boolean imported){
+    //remaining products put in the category
+    OTHERS (false , false),
+    IMPORTED_OTHERS(false,true);
+
+
+    private final boolean isExempted;
+    private final boolean isImported;
+
+    ItemsDescription(boolean exempted, boolean imported){
         isExempted = exempted;
         isImported = imported;
+    }
+
+    //return labels
+    public boolean isImported(){
+        return isImported;
+    }
+    public boolean isExempted(){
+        return isExempted;
     }
 }
