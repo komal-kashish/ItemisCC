@@ -64,5 +64,5 @@ Output 3:
     - Receipt - The main parser and calculator unit of the framework. Acquires text files from the main method and parses it extracting required item information.
                 Methods for calculating the total tax and sales tax and finally print the final receipt.     
 - Scripts 
-    - src/sales : main method in SalesTax.java. Receipt, Items and ItemDescription in src/sales/models
+    - src/sales : main method in SalesTax.java. Receipt, Items and ItemDescription in src/sales/model
     - src/test  :tests
