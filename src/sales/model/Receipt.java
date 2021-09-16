@@ -5,6 +5,13 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/*
+ * Actions implemented here:
+ *          -Parsing of input files
+ *          -Categorizing the items and calculating the sales and total tax on all the items in a cart
+ *          -Printing the receipt
+ */
+
 public class Receipt {
 
     private Double taxTotal = 0.00;
@@ -171,7 +178,7 @@ public class Receipt {
 
     public void printReceipt(){
         /*
-         * Printing the com.SalesTax.java.Receipt
+         * Printing the Receipt
          */
 
         for (Item item : ItemsList) {
