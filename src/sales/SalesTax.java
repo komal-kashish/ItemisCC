@@ -1,14 +1,14 @@
 package sales;
+
 import sales.model.Receipt;
 
 import java.io.FileNotFoundException;
-
 
 public class SalesTax {
 
     public static void main(String[] args) throws FileNotFoundException {
 
-        String[] cart ={ "assets/input1.txt",
+        String[] cart = { "assets/input1.txt",
                 "assets/input2.txt",
                 "assets/input3.txt"};
 
