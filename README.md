@@ -1,5 +1,4 @@
-# ItemisCC
-Coding Challenge for Itemis
+# Coding Challenge for Itemis
 
 Solution Implemented for Problem 1: Sales Tax
 
