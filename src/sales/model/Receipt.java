@@ -119,7 +119,7 @@ public class Receipt {
         filereader.close(); //closing the scanner
     }
 
-    public double[] TotalCost(){
+    public void TotalCost(){
 
         for(Item item: ItemsList){
             this.itemTotal = this.itemTotal + (item.getCost() * item.getQty());
@@ -127,7 +127,6 @@ public class Receipt {
         }
         this.saleTotal = this.itemTotal + this.taxTotal;
 
-        return new double[]{taxTotal, saleTotal};
     }
 
     private Double computeSalesTax(Item item) {
@@ -156,10 +155,6 @@ public class Receipt {
         return Math.ceil((amount * 20.0)) / 20.0;
     }
 
-    private Double computeSaleTotal(){
-        return this.saleTotal = (this.taxTotal + this.itemTotal);
-    }
-
 
     private static int ItemfromArray(String line, String[] items) {
 
@@ -179,7 +174,6 @@ public class Receipt {
          * Printing the com.SalesTax.java.Receipt
          */
 
-        int countItems = ItemsList.size();
         for (Item item : ItemsList) {
             System.out.println("1" + item.getName() + "at " + item.getCost());
         }
