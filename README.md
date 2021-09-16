@@ -56,6 +56,7 @@ Output 3:
 
 - Implemented using Java (jdk1.8.0_301)
 - IDE used for implementation and testing : IntelliJ IDEA CE
+- External Libraries - JUnit5.7.0 (Add in ClassPath)
 - Solution in four parts: SalesTax, Item, ItemDescription and Receipt
 
     - SalesTax - has the main method. Takes the input file as calls for Receipt
