@@ -50,3 +50,16 @@ Output 3:
 > 1 imported box of chocolates: 11.85
 > Sales Taxes: 6.70
 > Total: 74.68
+
+
+
+# Solution
+
+- Implemented using Java (jdk1.8.0_301)
+- IDE used for implementation and testing : IntelliJ IDEA CE
+- Solution in four parts: SalesTax, Item, ItemDescription and Receipt
+
+    - SalesTax - has the main method. Takes the input file as calls for Receipt
+    - Item & ItemDescription - items description with labels. Methods implemented to get and set item informations such as cost, quantity, name etc.
+    - Receipt - The main parser and calculator unit of the framework. Acquires text files from the main method and parses it extracting required item information.
+                Methods for calculating the total tax and sales tax and finally print the final receipt.
